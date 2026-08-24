@@ -1,6 +1,10 @@
 # 🤖 SahulatAI — AI Admission Counselor for SMIT
 
-> **Live Demo:** [https://sahulat-ai-chatbot-01.onrender.com](https://sahulat-ai-chatbot-01.onrender.com)
+> **Live Demo:** [https://sahulat-ai-chatbot-01.onrender.com](https://sahulat-ai-chatbot-01.onrender.com) Built for SMIT Hackathon 2026 — The complete codebase was ready on hackathon day, but deployment failed due to internet connectivity issues and free-tier memory limits on cloud platforms. But code zip filed was already uploaded under designated timeline in the zip file format.
+
+After the event, I explored Render, Railway, and Fly.io, optimized the build with Docker + CPU-only PyTorch, pre-baked the ChromaDB index, and finally got it live and stable.
+
+
 
 ---
 
@@ -93,42 +97,6 @@ docker run -p 10000:10000 --env-file .env sahulat-ai
 
 ---
 
-## 📁 Project Structure
-
-```
-sahulat-ai-chatbot/
-├── .python-version       # Python 3.11
-├── Dockerfile            # Multi-stage build
-├── render.yaml           # Render config
-├── requirements.txt      # Python deps
-├── run.py                # Local entrypoint
-├── data/
-│   ├── SMIT_Master_Knowledge_Base.pdf
-│   ├── complaints.db
-│   └── whatsapp.db
-├── chroma_db/            # Pre-built vector index
-├── src/
-│   ├── app.py            # Flask app + API routes
-│   ├── agent.py          # RAG pipeline
-│   ├── embeddings.py     # Embedding generation
-│   ├── vector_store.py   # ChromaDB wrapper
-│   ├── prompts.py        # System prompts (bilingual)
-│   ├── memory.py         # Conversation memory
-│   ├── chunker.py        # PDF chunking
-│   ├── ingest.py         # Knowledge base ingestion
-│   ├── llm.py            # Groq LLM client
-│   ├── config.py         # Settings
-│   └── integrations/
-│       └── whatsapp/     # WhatsApp webhook
-├── static/
-│   ├── app.js            # Frontend logic
-│   ├── style.css         # Styling (3-panel + mobile)
-│   └── logo.png          # SahulatAI logo
-└── templates/
-    └── index.html        # Main UI
-```
-
----
 
 ## 🧠 How It Works
 
@@ -162,13 +130,6 @@ sahulat-ai-chatbot/
 
 ---
 
-## 🎯 Hackathon Story
-
-> **Built for SMIT Hackathon 2026** — The complete codebase was ready **on hackathon day**, but deployment failed due to **internet connectivity issues** and **free-tier memory limits** on cloud platforms.
->
-> After the event, I explored **Render**, **Railway**, and **Fly.io**, optimized the build with **Docker + CPU-only PyTorch**, pre-baked the ChromaDB index, and finally got it **live and stable**.
->
-> **Lesson learned:** Always pre-build heavy ML artifacts and use Docker for reproducible deployments.
 
 ---
 
